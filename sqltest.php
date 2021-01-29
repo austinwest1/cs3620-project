@@ -1,7 +1,8 @@
 <?php
 $servername = "austinwest-cs3620db.mysql.database.azure.com";
-$username = "austinwest@austinwest-cs3620db";
-$password = "Music1285";
+
+$username = $_ENV('SQLUSER');
+$password = $_ENV('SQLPASS');
 $dbname = "cs3620_proj";
 
 // Create connection
@@ -21,4 +22,3 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-?>
