@@ -1,1 +1,1 @@
-testing git3. Edited from gitHub.
+testing git3. Edited from gitHub. Then from computer.
