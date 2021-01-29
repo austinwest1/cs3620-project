@@ -1,7 +1,7 @@
 <?php
-$servername = "austinwest.mysql.database.azure.com";
+$servername = "austinwest-cs3620db.mysql.database.azure.com";
 
-echo $_SESSION('SQLUSER');
+//echo $_SESSION('SQLUSER');
 session_start();
 
 $username = (isset($_SESSION["SQLUSER"]) ? $_SESSION["SQLUSER"] : $_ENV['SQLUSER']);
