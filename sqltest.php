@@ -15,8 +15,8 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO movies (movie_id, movie_name)
-VALUES (41, 'Jurassic Park')";
+$sql = "INSERT INTO movies (movie_id, movie_name, duration)
+VALUES (6, 'Iron Man', '1:45:32')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
