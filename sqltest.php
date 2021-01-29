@@ -1,5 +1,5 @@
 <?php
-$servername = "austinwest-cs3620db.mysql.database.azure.com";
+$servername = "austinwest.mysql.database.azure.com";
 
 echo $_SESSION('SQLUSER');
 session_start();
