@@ -18,7 +18,7 @@ $sql = "INSERT INTO books (book_id, title, author)
 VALUES (1, 'Red Rising', 'Pierce Brown')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "New record created successfully\n";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -28,7 +28,7 @@ FROM books
 WHERE book_id = 1";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Successful query";
+    echo "Successful query\n";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
@@ -37,7 +37,7 @@ $sql = "DELETE FROM books
 WHERE book_id = 1";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Record successfully deleted";
+    echo "Record successfully deleted\n";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
