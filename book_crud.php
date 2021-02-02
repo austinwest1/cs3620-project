@@ -18,14 +18,13 @@ $sql = "INSERT INTO books (book_id, title, author)
 VALUES (1, 'Red Rising', 'Pierce Brown')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully\n";
+    echo "New record created successfully\n . <br>";
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $sql = "SELECT book_id, title, author 
-FROM books
-WHERE book_id = 1";
+FROM books WHERE book_id = 1";
 
 if ($conn->query($sql) === TRUE) {
     echo "Successful query\n";
