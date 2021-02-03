@@ -32,6 +32,21 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
+
+$sql = "SELECT book_id, title, author FROM books
+WHERE book_id = 1";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo "id: " . $row["book_id"] . " - Title: " . $row["title"] . " " . $row["author"] . "<br>";
+    }
+} else {
+    echo "0 results";
+}
+
+
 $sql = "DELETE FROM books
 WHERE book_id = 1";
 
