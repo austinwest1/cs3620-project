@@ -23,16 +23,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-// $sql = "SELECT book_id, title, author 
-// FROM books WHERE book_id = 1";
-
-// if ($conn->query($sql) === TRUE) {
-//     echo "Successful query\n";
-// } else {
-//     echo "Error: " . $sql . "<br>" . $conn->error;
-// }
-
-
 $sql = "SELECT book_id, title, author FROM books
 WHERE book_id = 1";
 $result = $conn->query($sql);
@@ -45,7 +35,6 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
 
 $sql = "DELETE FROM books
 WHERE book_id = 1";
