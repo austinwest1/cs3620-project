@@ -1,18 +1,16 @@
-<h1 id="header1"></h1>
+<h1 id="header1">User Lookup</h1>
 
 <script>
 
-    function hello(userid) {
-        fetch('http://localhost:8080/cs3620/users.php?id=' + userid)
+    function getUser(userid, username, firstname, lastname) {
+        fetch('http://localhost:8080/cs3620/users.php?id=' + userid + '&un=' + username + '&fn=' + firstname + '&ln=' + lastname)
             .then(response => response.json())
             .then(
-
                 function (data) {
-                    document.getElementById("firstName").innerHTML = data.first_name;
-                    document.getElementById("lastName").innerHTML = data.last_name;
-                    document.getElementById("userName").innerHTML = data.username;
+                    document.getElementById("firstName").innerHTML = "First Name: " + data.first_name;
+                    document.getElementById("lastName").innerHTML = "Last Name: " + data.last_name;
+                    document.getElementById("userName").innerHTML = "Username: " + data.username;
                 }
-
             )
             .catch((error) => {
                 alert("That user does not yet exist")
@@ -24,18 +22,21 @@
 
 </script>
 
-Userid: <input type="text" id="theUserId" /><br />
-Username: <input type="text" id="username" /><br />
-First Name: <input type="text" id="firstname" /><br />
-Last Name: <input type="text" id="lastname" /><br />
-<input type="button" value="Get User with ID" onclick="hello(document.getElementById('theUserId').value);" /><br />
-<input type="button" value="Get User with username" onclick="hello(document.getElementById('username').value);" /><br />
+Userid: <input type="text" id="theUserId" />
+<input type="button" value="Get User with User ID"
+    onclick="getUser(document.getElementById('theUserId').value, -1, -1, -1);" /><br /><br />
 
+Username: <input type="text" id="username" />
+<input type="button" value="Get User with Username"
+    onclick="getUser(-1, document.getElementById('username').value, -1, -1);" /><br /><br />
 
+First Name: <input type="text" id="firstname" />
+<input type="button" value="Get User with First name"
+    onclick="getUser(-1, -1, document.getElementById('firstname').value, -1);" /><br /><br />
 
-
-
-
+Last Name: <input type="text" id="lastname" />
+<input type="button" value="Get User with Last name"
+    onclick="getUser(-1, -1, -1, document.getElementById('lastname').value);" /><br /><br />
 
 <div id="firstName"></div>
 <div id="lastName"></div>
