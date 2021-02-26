@@ -22,27 +22,46 @@ class UserDAO
         $conn->close();
     }
 
-    function createUser($user)
+    function checkLogin($passedinusername, $passedinpassword)
     {
-        echo "***";
         require_once('./Utilities/connection.php');
+        $user_id = 0;
+        $sql = "SELECT user_id FROM users WHERE username = '" . $passedinusername . "' AND password = '" . hash("sha256", trim($passedinpassword)) . "'";
 
-        $sql = "INSERT INTO cs3620_proj.users
-        (`username`,
-        `password`,
-        `first_name`,
-        `last_name`)
-        VALUES
-        ('" . $user->getUsername() . "',
-        '" . $user->getPassword() . "',
-        '" . $user->getFirstName() . "',
-        '" . $user->getLastName() . "'
-        );";
         $result = $conn->query($sql);
 
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $user_id = $row["user_id"];
+            }
+        } else {
+            echo "0 results";
+        }
+        echo $user_id;
         $conn->close();
+        return $user_id;
+    }
 
-        echo "User created";
+    function createUser($user)
+    {
+        require_once('./Utilities/connection.php');
+
+        // prepare and bind
+        $stmt = $conn->prepare("INSERT INTO cs3620_proj.users (`username`,
+        `password`,
+        `first_name`,
+        `last_name`) VALUES (?, ?, ?, ?)");
+
+        $un = $user->getUsername();
+        $pw = $user->getPassword();
+        $fn = $user->getFirstName();
+        $ln = $user->getLastName();
+
+        $stmt->bind_param("ssss", $un, $pw, $fn, $ln);
+        $stmt->execute();
+
+        $stmt->close();
+        $conn->close();
     }
 
     function deleteUser($username)

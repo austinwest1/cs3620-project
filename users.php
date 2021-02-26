@@ -1,3 +1,5 @@
+
+
 <?php
 
 ini_set('display_errors', 1);
@@ -11,19 +13,19 @@ $un = $_GET["un"];
 $fn = $_GET["fn"];
 $ln = $_GET["ln"];
 
-if ($id != -1) {
+if ($id != "") {
     //echo "*";
     $user = new user();
     $user->getUser($_GET["id"]);
-} else if ($un != -1) {
+} else if ($un != "") {
     //echo "**";
     $user = new user();
     $user->getUserByUsername($un);
-} else if ($fn != -1) {
+} else if ($fn != "") {
     //echo "***";
     $user = new user();
     $user->getUserByFirstname($fn);
-} else if ($ln != -1) {
+} else if ($ln != "") {
     //echo "****";
     $user = new user();
     $user->getUserByLastname($ln);

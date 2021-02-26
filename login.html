@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <h1>Very Official Website</h1>
+    </header>
+
+    <h1 id="loginlbl">Login</h1>
+
+    <form id="login" action="login.php" method="POST">
+        <div class="mb-3">
+            <label id="lbl" for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp "
+                placeholder="Email/Username" name="username">
+
+        </div>
+        <div class="mb-3">
+            <label id="lbl" for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password"
+                placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+</body>
+
+<footer id="foot">
+    Austin West
+</footer>
+
+<style>
+    html {
+        height: 100%;
+        background-color: azure;
+    }
+
+    header h1 {
+        margin: auto;
+        text-align: center;
+        background-color: rgb(75, 118, 197);
+        color: white;
+    }
+
+    body {
+        width: 1000px;
+        min-height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    h1#loginlbl {
+        padding-top: 20px;
+        color: grey;
+        text-align: center;
+    }
+
+    h1#signup {
+        padding-top: 40;
+        text-align: center;
+        color: grey;
+    }
+
+    form#login {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+        margin-top: 15;
+        border-style: solid;
+        border-color: grey;
+        border-width: 2px;
+        border-radius: 9px;
+    }
+
+    #lbl {
+        float: right;
+        padding-top: 10px;
+    }
+
+    #submitbtn {
+        margin-top: 20px;
+        margin: auto;
+        text-align: center;
+    }
+
+    footer#foot {
+        bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        position: fixed;
+        text-align: center;
+        background-color: rgb(75, 118, 197);
+        width: 1000px;
+        padding: 10px;
+        color: white;
+    }
+</style>
+
+</html>

@@ -84,6 +84,7 @@ class User implements \JsonSerializable
     public function setPassword($password)
     {
         $this->password = hash("sha256", $password);
+        //echo $this->password;
     }
 
     public function getUserID()
@@ -106,6 +107,12 @@ class User implements \JsonSerializable
     {
         $userDAO = new UserDAO();
         $userDAO->deleteUser($username);
+    }
+
+    function checkLogin($username, $password)
+    {
+        $userDAO = new userDAO();
+        return $userDAO->checkLogin($username, $password);
     }
 
     public function jsonSerialize()

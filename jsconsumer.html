@@ -3,7 +3,7 @@
 <script>
 
     function getUser(userid, username, firstname, lastname) {
-        fetch('https://austinwest.azurewebsites.net/users.php?id=' + userid + '&un=' + username + '&fn=' + firstname + '&ln=' + lastname)
+        fetch('http://austinwest.azurewebsites.net/users.php?id=' + userid + '&un=' + username + '&fn=' + firstname + '&ln=' + lastname)
             .then(response => response.json())
             .then(
                 function (data) {
@@ -37,6 +37,11 @@ First Name: <input type="text" id="firstname" />
 Last Name: <input type="text" id="lastname" />
 <input type="button" value="Get User with Last name"
     onclick="getUser(-1, -1, -1, document.getElementById('lastname').value);" /><br /><br />
+
+<input type="button" value="Get User"
+    onclick="getUser(document.getElementById('theUserId').value, document.getElementById('username').value, document.getElementById('firstname').value, document.getElementById('lastname').value);" /><br /><br />
+
+<p>Wasn't sure if we should have buttons for each search, or just one. Both methods work. <br /></p>
 
 <div id="firstName"></div>
 <div id="lastName"></div>
