@@ -1,0 +1,65 @@
+html {
+    height: 100%;
+    background-color: azure;
+}
+
+header h1 {
+    margin: auto;
+    text-align: center;
+    background-color: rgb(75, 118, 197);
+    color: white;
+}
+
+body {
+    width: 1000px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1#loginlbl {
+    padding-top: 20px;
+    color: grey;
+    text-align: center;
+}
+
+h1#signup {
+    padding-top: 40;
+    text-align: center;
+    color: grey;
+}
+
+form#login {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-top: 15;
+    border-style: solid;
+    border-color: grey;
+    border-width: 2px;
+    border-radius: 9px;
+}
+
+#lbl {
+    float: right;
+    padding-top: 10px;
+}
+
+#submitbtn {
+    margin-top: 20px;
+    margin: auto;
+    text-align: center;
+}
+
+footer#foot {
+    bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    text-align: center;
+    background-color: rgb(75, 118, 197);
+    width: 1000px;
+    padding: 10px;
+    color: white;
+}
