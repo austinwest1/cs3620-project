@@ -43,7 +43,7 @@ require_once('./header.php');
 </body>
 
 <footer id="foot">
-    Footer
+    Austin West
 </footer>
 
 <style>
