@@ -1,4 +1,3 @@
-
 <?php
 require_once('./User/user.php');
 
@@ -27,4 +26,3 @@ class session
         unset($_SESSION["user_id"]);
     }
 }
-?>
