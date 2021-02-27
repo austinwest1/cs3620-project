@@ -13,5 +13,4 @@ $user->setLastName($_POST["lastname"]);
 $user->setPassword($_POST["password"]);
 $user->createUser();
 
-echo "I got here";
 header("Location: login.html");

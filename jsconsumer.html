@@ -3,7 +3,7 @@
 <script>
 
     function getUser(userid, username, firstname, lastname) {
-        fetch('http://austinwest.azurewebsites.net/users.php?id=' + userid + '&un=' + username + '&fn=' + firstname + '&ln=' + lastname)
+        fetch('https://austinwest.azurewebsites.net/users.php?id=' + userid + '&un=' + username + '&fn=' + firstname + '&ln=' + lastname)
             .then(response => response.json())
             .then(
                 function (data) {
