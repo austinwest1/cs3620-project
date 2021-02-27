@@ -37,7 +37,6 @@ class UserDAO
         } else {
             echo "0 results";
         }
-        echo $user_id;
         $conn->close();
         return $user_id;
     }
