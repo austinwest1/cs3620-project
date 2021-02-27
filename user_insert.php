@@ -1,24 +1,4 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-// session_start();
-
-// require_once('./User/user.php');
-
-// $user = new User();
-
-// $user->setUsername(($_POST["username"]));
-// $user->setFirstname(($_POST["firstname"]));
-// $user->setLastname(($_POST["lastname"]));
-// $user->setPassword(($_POST["password"]));
-// $user->createUser();
-
-// header("Location: login.html");
-?>
-
-
-<?php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -33,5 +13,5 @@ $user->setLastName($_POST["lastname"]);
 $user->setPassword($_POST["password"]);
 $user->createUser();
 
+echo "I got here";
 header("Location: login.html");
-?>
