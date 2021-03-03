@@ -40,7 +40,7 @@
 </body>
 
 <footer id="foot">
-    Austin Westt
+    Austin West
 </footer>
 
 <style>
