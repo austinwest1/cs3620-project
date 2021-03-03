@@ -11,9 +11,9 @@ require_once('./session/session.php');
 $session = new session();
 $login_result = $session->login($_POST["username"], $_POST["password"]);
 if (!$login_result) {
-    header("Location: login.html?error=true");
+    header("Location: login2.html?error=true");
     exit();
 } else {
-    header("Location: dashboard.php");
+    header("Location: dashboard2.php");
     exit();
 }

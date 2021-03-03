@@ -3,5 +3,5 @@ require_once('./session/session.php');
 session_start();
 $session = new session();
 $login_result = $session->logout();
-header("Location: login.html");
+header("Location: login2.html");
 exit();
