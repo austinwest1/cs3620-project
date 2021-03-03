@@ -14,7 +14,7 @@
 
         <!-- Login Form -->
         <form action="user_insert.php" method="POST">
-            <input type="text" id="login" class="fadeIn second" name="username" placeholder="Username/Email">
+            <input type="text" id="login" class="fadeIn second" name="username" placeholder="Email">
             <input type="text" id="login" class="fadeIn second" name="firstname" placeholder="First Name">
             <input type="text" id="login" class="fadeIn second" name="lastname" placeholder="Last Name">
 
