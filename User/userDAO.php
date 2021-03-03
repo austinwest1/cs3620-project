@@ -35,7 +35,7 @@ class UserDAO
                 $user_id = $row["user_id"];
             }
         } else {
-            echo "0 results";
+            //echo "0 results";
         }
         $conn->close();
         return $user_id;
