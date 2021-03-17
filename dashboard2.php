@@ -1,43 +1,32 @@
-<?php require_once('header.php'); ?>
+<?php require_once('header.php');
 
-<!-- Begin page content -->
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// require_once('./User/user.php');
+
+// $user = new User();
+// $user->getUser($_SESSION["user_id"]);
+// $fn = $user->getFirstname();
+
+// echo "<h1 class='mt-5'>" . $fn . "'s Favorite Shows</h1>";
+
+
+?>
+
 <main role="main" class="container" id="cards">
-    <h1 class="mt-5">Austin's Favorite Shows</h1>
+
+
+
+    <h1 class="mt-5">My Favorite Shows</h1>
+
 
     <input type="button" class="btn btn-outline-primary" id="addCard" value="Add a show">
 
     <div id="newCard">
 
     </div>
-
-    <!-- <div id="newCard">
-        <div class="card" id="showCard" style="width: 18rem;">
-            <div class="card-body">
-                <div class="row">
-                    <form role="form" id="boostrap-overrides" class="col-md-9 go-right">
-                        <h5>Add a show</h5>
-                        <div class="form-group">
-                            <input id="name" name="name" type="text" class="form-control" required>
-                            <label for="name">Title</label>
-                        </div>
-                        <div class="form-group">
-                            <input id="phone" name="phone" type="tel" class="form-control" required>
-                            <label for="phone">Rating</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="phone" class="form-control" required></textarea>
-                            <label for="message">Description</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-outline-primary" value="Add show">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br />
-    </div> -->
 
     <?php
     // ini_set('display_errors', 1);
@@ -47,47 +36,44 @@
     require_once('./show/show.php');
 
     $show = new show();
-    $shows = $show->getMyShows();
+    $shows = $show->getMyShows($_SESSION["user_id"]);
 
     $arrlength = count($shows);
 
+    // if (isset($_GET["del"]) and $_GET["del"] == "true") {
+    //     echo "<script>alert(Show was deleted!);</script>";
+    // }
 
 
-    for ($x = 0; $x < $arrlength; $x++) {
 
-        // displays by order added
-        // echo '<div class="card" id ="showCard" style="width: 18rem;">
-        //             <div class="card-body">
-        //                 <h5 class="card-title">' . $shows[$x]->getShowName() . '</h5>
-        //                 <h6 class="card-subtitle mb-2 text-muted">Rating: ' . $shows[$x]->getShowRating() . '</h6>
-        //                 <p class="card-text">' . $shows[$x]->getShowDescription() . '</p>
-        //                 <a href="#" class="card-link">Card link</a>
-        //             </div>
-        //           </div>
-        //           <br />';
-    }
+    //for ($x = 0; $x < $arrlength; $x++) {
+
+    // displays by order added if wanted
+    // echo '<div class="card" id ="showCard" style="width: 18rem;">
+    //             <div class="card-body">
+    //                 <h5 class="card-title">' . $shows[$x]->getShowName() . '</h5>
+    //                 <h6 class="card-subtitle mb-2 text-muted">Rating: ' . $shows[$x]->getShowRating() . '</h6>
+    //                 <p class="card-text">' . $shows[$x]->getShowDescription() . '</p>
+    //                 <a href="#" class="card-link">Card link</a>
+    //             </div>
+    //           </div>
+    //           <br />';
+    //}
 
     // displays by most recent additions first
-    for ($x = $arrlength - 1; $x > 0; $x--) {
+    for ($x = $arrlength - 1; $x >= 0; $x--) {
         echo '<div class="card" id ="showCard" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">' . $shows[$x]->getShowName() . '</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Rating: ' . $shows[$x]->getShowRating() . '</h6>
                         <p class="card-text">' . $shows[$x]->getShowDescription() . '</p>
-                        <a href="#" class="card-link">Card link</a>
+                        <a href="delete_show.php?show_id=' . $shows[$x]->getShowId() . '" class="card-link">Delete Show</a>
                     </div>
                   </div>
                   <br />';
     }
 
     ?>
-    <!-- <script>
-        var cardButton = document.getElementById("addCard");
-        cardButton.onclick = function() {
-            document.getElementById("newCard").innerHTML += "<div class='card' id='showCard' style='width: 18rem;'> <div class='card-body'> <form method='POST' action='show_create.php'><label>Title</label><input name='title' type='text'><br /><label>Rating</label><input name='rating' type='text'><br /><label>Description</label><textarea name='description' type='text'></textarea><br /><input type='submit' class='button' value='Add show'></form> </div></div>";
-        };
-    </script> -->
-
 
     <script>
         var cardButton = document.getElementById("addCard");
@@ -98,7 +84,7 @@
 
 
     <style>
-        @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+        /* @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600); */
 
         .form-control {
             background: transparent;
@@ -109,7 +95,7 @@
         }
 
         form {
-            width: 320px;
+            /* width: 320px; */
             margin: 0px;
         }
 
@@ -163,6 +149,8 @@
             color: #999;
             padding: 7px 6px;
             font-weight: normal;
+            text-transform: uppercase;
+            font-size: 0.8em;
         }
 
         form textarea {

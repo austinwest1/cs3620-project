@@ -10,16 +10,22 @@ class Show implements JsonSerializable
     private $show_rating;
 
     //methods
-    function addShow()
+    function addShow($user_id)
     {
         $showDAO = new ShowDAO();
-        $showDAO->addShow($this);
+        $showDAO->addShow($this, $user_id);
     }
 
-    public function getMyShows()
+    public function getMyShows($user_id)
     {
         $showDAO = new ShowDAO();
-        return $showDAO->getAllShows();
+        return $showDAO->getShowsByUserId($user_id);
+    }
+
+    public function deleteShow($user_id, $show_id)
+    {
+        $showDAO = new ShowDAO();
+        return $showDAO->deleteShow($user_id, $show_id);
     }
 
     public function setShowName($showName)

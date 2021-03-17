@@ -1,0 +1,16 @@
+<?php
+echo $_GET["show_id"];
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require_once('./show/show.php');
+
+require_once('./sessioncheck.php');
+
+$show = new show();
+$shows = $show->deleteShow($_SESSION["user_id"], $_GET["show_id"]);
+
+header("Location: dashboard2.php?del=true");

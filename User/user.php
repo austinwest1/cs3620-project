@@ -61,6 +61,12 @@ class User implements \JsonSerializable
         return $this->first_name;
     }
 
+    public function getFirstnameById($user_id)
+    {
+        $userDAO = new UserDAO();
+        $userDAO->getFirstname($user_id);
+    }
+
     public function getLastname()
     {
         return $this->last_name;

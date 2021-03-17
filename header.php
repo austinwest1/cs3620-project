@@ -40,7 +40,7 @@
                         <a class="nav-link" href="dashboard2.php">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="add_show.php">Add Show</a>
+                        <a class="nav-link disabled" href="add_show.php">Add Show</a>
                     </li>
                 </ul>
                 <form class="form-inline mt-2 mt-md-0">

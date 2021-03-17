@@ -13,6 +13,9 @@ include_once('./header.php');
     <!------ Include the above in your HEAD tag ---------->
 </head>
 
+
+<h1>I created this page first and then implemented the add show button on the home page. The home page method is better.</h1>
+
 <form action="show_create.php" method="POST">
     <div class="login-wrap">
         <div class="login-html">
@@ -56,6 +59,12 @@ include_once('./header.php');
         background: white;
         background-size: cover;
         /* font: 600 16px/18px 'Open Sans', sans-serif; */
+    }
+
+    h1 {
+        margin-top: 100px;
+        text-align: center;
+        font-size: 2em;
     }
 
 
