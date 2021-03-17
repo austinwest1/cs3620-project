@@ -89,7 +89,5 @@ class ShowDAO
         $result = $conn->query($sql);
 
         $conn->close();
-
-        echo "user deleted";
     }
 }
