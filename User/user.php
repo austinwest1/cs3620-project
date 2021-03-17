@@ -64,7 +64,9 @@ class User implements \JsonSerializable
     public function getFirstnameById($user_id)
     {
         $userDAO = new UserDAO();
-        $userDAO->getFirstname($user_id);
+        $userDAO->getFirstname($this, $user_id);
+
+        return $this->first_name;
     }
 
     public function getLastname()
@@ -119,6 +121,12 @@ class User implements \JsonSerializable
     {
         $userDAO = new userDAO();
         return $userDAO->checkLogin($username, $password);
+    }
+
+    public function setSessionFirstname($loggedInUser)
+    {
+        $userDAO = new userDAO();
+        return $userDAO->setSessionFirstname($loggedInUser);
     }
 
     public function jsonSerialize()

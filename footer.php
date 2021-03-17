@@ -1,6 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <span class="text-muted">My Shows</span>
+        <span class="text-muted"> <?php echo $_SESSION["loggedInFn"] ?>'s Shows</span>
     </div>
 </footer>
 

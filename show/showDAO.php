@@ -38,7 +38,7 @@ class ShowDAO
         $result = $conn->query($sql);
 
 
-        $shows;
+        $shows = array();
         $index = 0;
 
         if ($result->num_rows > 0) {
@@ -62,16 +62,18 @@ class ShowDAO
     {
         require_once('./Utilities/connection.php');
 
+        $city = $conn->real_escape_string($city);
+
         $sql = "INSERT INTO cs3620_proj.show (`show_id`,
         `show_name`,
         `show_description`,
         `show_rating`,
         `user_id`) 
          VALUES 
-        ('" . $show->getShowId() . "',
-        '" . $show->getShowName() . "',
-        '" . $show->getShowDescription() . "',
-        '" . $show->getShowRating() . "',
+        ('" . $id = $conn->real_escape_string($show->getShowId()) . "',
+        '" . $name = $conn->real_escape_string($show->getShowName()) . "',
+        '" . $desc = $conn->real_escape_string($show->getShowDescription()) . "',
+        '" . $rating = $conn->real_escape_string($show->getShowRating()) . "',
         '" . $userid . "'
         );";
 

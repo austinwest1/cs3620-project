@@ -76,11 +76,44 @@ class UserDAO
         echo "user deleted";
     }
 
-    function getFirstname($userid)
+    function setSessionFirstname($loggedInUser)
+    {
+        // $servername = "austinwest-cs3620db.mysql.database.azure.com";
+        // session_start();
+
+        // $un = (isset($_SESSION["SQLUSER"]) ? $_SESSION["SQLUSER"] : $_ENV['SQLUSER']);
+        // $password = (isset($_SESSION["SQLPW"]) ? $_SESSION["SQLPW"] : $_ENV['SQLPW']);
+        // $dbname = "cs3620_proj";
+
+        // // Create connection
+        // $conn = new mysqli($servername, $un, $password, $dbname);
+        // // Check connection
+        // if ($conn->connect_error) {
+        //     die("Connection failed: " . $conn->connect_error);
+        // }
+        include('./Utilities/connection.php');
+        //global $conn;
+        $fn = "";
+        $sql = "SELECT first_name FROM users WHERE user_id = '" . $loggedInUser . "';";
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $fn = $row["first_name"];
+            }
+        } else {
+            //echo "0 results";
+        }
+        $conn->close();
+        return $fn;
+    }
+
+    function getFirstname($user, $userid)
     {
         require_once('./Utilities/connection.php');
 
-        $sql = "SELECT first_name, last_name, username, user_id FROM users WHERE " . $method . "=" . "'$data'";
+        $sql = "SELECT first_name FROM users WHERE user_id = " . $userid;
         //echo $sql;
         $result = $conn->query($sql);
 

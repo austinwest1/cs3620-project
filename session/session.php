@@ -11,6 +11,8 @@ class session
         if ($loggedInUser != 0) {
             $_SESSION["loggedIn"] = true;
             $_SESSION["user_id"] = $loggedInUser;
+            $_SESSION["loggedInFn"] = $user->setSessionFirstname($loggedInUser);
+
             return true;
         } else {
             unset($_SESSION["loggedIn"]);

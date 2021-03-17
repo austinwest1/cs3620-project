@@ -3,24 +3,12 @@
 // ini_set('display_errors', 1);
 // ini_set('display_startup_errors', 1);
 // error_reporting(E_ALL);
-
-// require_once('./User/user.php');
-
-// $user = new User();
-// $user->getUser($_SESSION["user_id"]);
-// $fn = $user->getFirstname();
-
-// echo "<h1 class='mt-5'>" . $fn . "'s Favorite Shows</h1>";
-
-
 ?>
 
 <main role="main" class="container" id="cards">
 
-
-
-    <h1 class="mt-5">My Favorite Shows</h1>
-
+    <!-- <h1 class="mt-5">My Favorite Shows</h1> -->
+    <?php echo "<h1 class='mt-5'>" . $_SESSION["loggedInFn"] . "'s Favorite Shows</h1>"; ?>
 
     <input type="button" class="btn btn-outline-primary" id="addCard" value="Add a show">
 
@@ -40,25 +28,11 @@
 
     $arrlength = count($shows);
 
+
     // if (isset($_GET["del"]) and $_GET["del"] == "true") {
     //     echo "<script>alert(Show was deleted!);</script>";
     // }
 
-
-
-    //for ($x = 0; $x < $arrlength; $x++) {
-
-    // displays by order added if wanted
-    // echo '<div class="card" id ="showCard" style="width: 18rem;">
-    //             <div class="card-body">
-    //                 <h5 class="card-title">' . $shows[$x]->getShowName() . '</h5>
-    //                 <h6 class="card-subtitle mb-2 text-muted">Rating: ' . $shows[$x]->getShowRating() . '</h6>
-    //                 <p class="card-text">' . $shows[$x]->getShowDescription() . '</p>
-    //                 <a href="#" class="card-link">Card link</a>
-    //             </div>
-    //           </div>
-    //           <br />';
-    //}
 
     // displays by most recent additions first
     for ($x = $arrlength - 1; $x >= 0; $x--) {
@@ -84,8 +58,6 @@
 
 
     <style>
-        /* @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600); */
-
         .form-control {
             background: transparent;
         }
