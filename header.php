@@ -1,7 +1,6 @@
 <?php require_once("sessioncheck.php")
 ?>
 
-
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +25,7 @@
 </head>
 
 <body>
-
+    j
     <header>
         <!-- Fixed navbar -->
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
